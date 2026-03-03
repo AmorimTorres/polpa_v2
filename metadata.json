@@ -1,0 +1,5 @@
+{
+  "name": "Pomar Urbano",
+  "description": "A retro-style map to find and mark fruit trees in public spaces.",
+  "requestFramePermissions": ["geolocation"]
+}
