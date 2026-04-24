@@ -1,24 +1,20 @@
 pipeline {
-    agent any
-    
-    tools {
-        nodejs 'node' 
+    agent {
+        docker {
+            image 'node:20-bookworm' // Imagem oficial estável
+        }
     }
 
     stages {
         stage('restore') {
             steps {
-                echo ""
                 echo "Restoring dependencies..."
-                echo ""
                 sh 'npm ci'
             }
         }
         stage('build') {
             steps {
-                echo ""
                 echo "Building the application..."
-                echo ""
                 sh 'npm run build'
             }
         }
